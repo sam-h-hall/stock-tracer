@@ -6,7 +6,8 @@ import { getServerAuthSession } from "../common/get-server-auth-session";
 import { prisma } from "../db/client";
 
 type CreateContextOptions = {
-  session: Session | null;
+  // TODO: remove this void part, only adding bc not using this and getting type error
+  session: Session | null | void;
 };
 
 /** Use this helper for:

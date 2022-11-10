@@ -5,7 +5,7 @@ import { useSpring, animated } from "@react-spring/web";
 import Link from "next/link";
 import { data as stockData } from "./data.js";
 
-const Explore: NextPage = () => {
+const Explore: React.FC = () => {
   const [buttonAni] = useSpring(() => ({
     from: { x: -1000 },
     to: { x: 0 },
