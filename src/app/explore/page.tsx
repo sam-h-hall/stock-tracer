@@ -1,15 +1,15 @@
 "use client";
-import { NextPage } from "next";
 import { StockCard } from "../../components/stockCard";
 import { useSpring, animated } from "@react-spring/web";
-import Link from "next/link";
 import { data as stockData } from "./data.js";
+import { useEffect, useState } from "react";
 
 const Explore: React.FC = () => {
   const [buttonAni] = useSpring(() => ({
     from: { x: -1000 },
     to: { x: 0 },
   }));
+  const [blah, setBlah] = useState<any>();
 
   return (
     <animated.div
@@ -18,9 +18,7 @@ const Explore: React.FC = () => {
     >
       {stockData.map((stock, idx) => (
         <div className="mt-6 mr-4 ml-4" key={idx}>
-          <Link href={`/${stock.meta.symbol}`}>
-            <StockCard {...stock} />
-          </Link>
+          <StockCard {...stock} volume={blah} />
         </div>
       ))}
     </animated.div>

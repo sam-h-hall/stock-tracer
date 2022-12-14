@@ -55,6 +55,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       percent_change: 44.27861,
     },
   ];
+
   return (
     <div className="m-0 flex h-full flex-row">
       <div className="flex-grow">{children}</div>
