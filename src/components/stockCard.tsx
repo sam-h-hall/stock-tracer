@@ -9,8 +9,8 @@ export const StockCard = ({
   previewInfo,
   symbol,
 }: {
-  previewInfo: TSD;
-  symbol: string;
+  previewInfo: TSD | undefined;
+  symbol: string | undefined;
 }) => {
   Chart.register();
   const today = new Date().toISOString().split("T")[0];
@@ -31,10 +31,10 @@ export const StockCard = ({
     labels: (string | undefined)[];
     datasets: [
       {
-        label: string;
-        backgroundColor: string;
-        borderColor: string;
-        pointRadius: number;
+        label: string | undefined;
+        backgroundColor: string | undefined;
+        borderColor: string | undefined;
+        pointRadius: number | undefined;
         data: (string | undefined)[];
       }
     ];
@@ -73,6 +73,7 @@ export const StockCard = ({
   };
 
   useEffect(() => {
+    if (previewInfo === undefined) return;
     if (previewInfo?.dateLegend.length > 0) {
       if (today && today in previewInfo?.dateLegend) {
         // console.log("TODAy! ", today);

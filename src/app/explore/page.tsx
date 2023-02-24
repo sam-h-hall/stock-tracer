@@ -55,7 +55,7 @@ const establishConnection = async (
     } = response;
 
     if (httpStatusCode == 200 && Responses && Responses[tableName]) {
-      let newData = Responses[tableName] || null;
+      const newData = Responses[tableName] || null;
       if (existingState && newData) {
         Responses[tableName] = [
           ...existingState,
