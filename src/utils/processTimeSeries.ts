@@ -8,8 +8,8 @@ export const processTimeSeries = (
   symbolData: Time_Series_Data[]
 ): Partial<Time_Series_State> | null => {
   // console.log("sym: ", symbolData);
-  let symbolLegend = [""];
-  let preProcessingData = {
+  const symbolLegend = [""];
+  const preProcessingData = {
     symbolLegend,
     data:
       symbolData.reduce(
@@ -43,7 +43,7 @@ export const processTimeSeries = (
         let dateLegendRef = preProcessingData?.data?.[symbol]?.dateLegend;
         dateLegendRef = dateLegend ?? [];
 
-        let closing = timeLegend.map((time) => {
+        const closing = timeLegend.map((time) => {
           if (
             preProcessingData?.data?.[symbol]?.time_series?.[date]?.[time]
               ?.close
@@ -60,8 +60,8 @@ export const processTimeSeries = (
             closing,
           },
         };
-        preProcessingData.data[symbol].graphData = newGraphData;
-        preProcessingData.data[symbol].dateLegend = dateLegend;
+        preProcessingData!.data![symbol]!.graphData = newGraphData;
+        preProcessingData!.data![symbol]!.dateLegend = dateLegend;
       });
     });
   }

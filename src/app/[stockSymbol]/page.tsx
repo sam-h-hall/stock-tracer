@@ -63,11 +63,11 @@ export default function StockDetailsPage() {
   });
 
   // what is type of useState hook?
-  const getChartData = (datapoint) => {
-    fetch(`http://localhost:5000/stockDetails/AMZN/${datapoint}`, {
-      method: "GET",
-    });
-  };
+  // const getChartData = (datapoint) => {
+  //   fetch(`http://localhost:5000/stockDetails/AMZN/${datapoint}`, {
+  //     method: "GET",
+  //   });
+  // };
   // const getChartData = (
   //   datapoint: string = "close",
   //   stateFunction?: any,
@@ -104,7 +104,9 @@ export default function StockDetailsPage() {
   //   });
   // }, []);
 
-  const showVolume = (e: any) => { };
+  const showVolume = (e: any) => {
+    return e;
+  };
   // const showVolume = (e: any) => {
   //   console.log(e.target.name);
   //   if (e.target.name === "Close") {
