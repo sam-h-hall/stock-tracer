@@ -24,8 +24,8 @@ const establishConnection = async (
 ): Promise<Time_Series_Data[] | null> => {
   const client = new DynamoDBClient({
     credentials: {
-      accessKeyId: process.env.AWS_ACCESS_KEY ?? "",
-      secretAccessKey: process.env.AWS_SECRET_KEY ?? "",
+      accessKeyId: process.env.AWS_ACCESS_KEY_ENV ?? "",
+      secretAccessKey: process.env.AWS_SECRET_KEY_ENV ?? "",
     },
     region: "us-east-1",
   });
