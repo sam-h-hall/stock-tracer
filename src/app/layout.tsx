@@ -14,7 +14,10 @@ export default function RootLayout({
         <link rel="icon" href="favicon.ico" />
       </head>
       <body>
-        <Navbar />
+        <div className="fixed w-full">
+          <Navbar />
+        </div>
+        <div className="h-20"></div>
         {children}
       </body>
     </html>

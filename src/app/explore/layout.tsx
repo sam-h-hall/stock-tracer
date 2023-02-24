@@ -55,14 +55,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       percent_change: 44.27861,
     },
   ];
+
   return (
     <div className="m-0 flex h-full flex-row">
       <div className="flex-grow">{children}</div>
       <div className="max-w-[40rem] border-l border-blue-800 bg-gray-800 p-2 text-center lg:w-[40rem] xl:w-[40rem] 2xl:w-[30rem]">
         <h3 className="pb-2 text-xl font-bold text-white">Market Movers</h3>
-        {testData.map((testItem, idx) => (
+        {/*testData.map((testItem, idx) => (
           <SmallPreviewcard key={idx} previewData={testItem} />
-        ))}
+        ))*/}
       </div>
     </div>
   );

@@ -14,5 +14,8 @@ const config = {
     defaultLocale: "en",
   },
   experimental: { appDir: true },
+  images: {
+    domains: ["api.twelvedata.com"],
+  },
 };
 export default config;
